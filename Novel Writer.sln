@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Novel Writer", "Novel Writer.csproj", "{1E1AB07D-290E-4BCE-B0B0-3A31894B3984}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release Suggest|Any CPU = Release Suggest|Any CPU
+		Release Suggest|x64 = Release Suggest|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		test|Any CPU = test|Any CPU
+		test|x64 = test|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E1AB07D-290E-4BCE-B0B0-3A31894B3984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E1AB07D-290E-4BCE-B0B0-3A31894B3984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E1AB07D-290E-4BCE-B0B0-3A31894B3984}.Debug|x64.ActiveCfg = Debug|x64
+		{1E1AB07D-290E-4BCE-B0B0-3A31894B3984}.Debug|x64.Build.0 = Debug|x64
+		{1E1AB07D-290E-4BCE-B0B0-3A31894B3984}.Release Suggest|Any CPU.ActiveCfg = Release Suggest|Any CPU
+		{1E1AB07D-290E-4BCE-B0B0-3A31894B3984}.Release Suggest|Any CPU.Build.0 = Release Suggest|Any CPU
+		{1E1AB07D-290E-4BCE-B0B0-3A31894B3984}.Release Suggest|x64.ActiveCfg = Release Suggest|x64
+		{1E1AB07D-290E-4BCE-B0B0-3A31894B3984}.Release Suggest|x64.Build.0 = Release Suggest|x64
+		{1E1AB07D-290E-4BCE-B0B0-3A31894B3984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E1AB07D-290E-4BCE-B0B0-3A31894B3984}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E1AB07D-290E-4BCE-B0B0-3A31894B3984}.Release|x64.ActiveCfg = Release|x64
+		{1E1AB07D-290E-4BCE-B0B0-3A31894B3984}.Release|x64.Build.0 = Release|x64
+		{1E1AB07D-290E-4BCE-B0B0-3A31894B3984}.test|Any CPU.ActiveCfg = test|Any CPU
+		{1E1AB07D-290E-4BCE-B0B0-3A31894B3984}.test|Any CPU.Build.0 = test|Any CPU
+		{1E1AB07D-290E-4BCE-B0B0-3A31894B3984}.test|x64.ActiveCfg = test|x64
+		{1E1AB07D-290E-4BCE-B0B0-3A31894B3984}.test|x64.Build.0 = test|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {635ADF81-6276-44FD-AA90-0DBD763EFF61}
+	EndGlobalSection
+EndGlobal
