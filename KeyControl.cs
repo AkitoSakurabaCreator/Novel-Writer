@@ -14,39 +14,38 @@ namespace novel
 {
     public partial class KeyControl : DevExpress.XtraEditors.XtraForm
     {
-        novel f1;
-        public KeyControl(novel f)
+        novel novel = null;
+        Functions functions = null;
+
+        public KeyControl()
         {
-            f1 = f;
+            InitializeComponent();
+        }
+        internal KeyControl(novel novel, Functions functions)
+        {
+            this.novel = novel;
+            this.functions = functions;
             InitializeComponent();
         }
 
         private void simpleButton14_Click(object sender, EventArgs e)
         {
-            /*
-            TextBox f1_F2 = (TextBox)f1.Controls["F2"];
-            f1_F2.Text = this.textBox1.Text;
-            */
-            f1.F2 = textBox1.Text;
-            /*
-            Label f1_F2 = (Label)f1.Controls["label9"];
-            f1_F2.Text = this.textBox1.Text;
-            */
+            functions.F2 = textBox1.Text;
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            f1.F3 = textBox2.Text;
+            functions.F3 = textBox2.Text;
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            f1.F4 = textBox3.Text;
+            functions.F4 = textBox3.Text;
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            f1.F5 = textBox4.Text;
+            functions.F5 = textBox4.Text;
         }
 
         private void simpleButton4_Click(object sender, EventArgs e)

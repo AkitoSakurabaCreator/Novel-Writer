@@ -1,0 +1,9 @@
+bin/
+50bbf3439ddcf93f9a3d97d07a9f80ce_xxo.ico
+obj/
+Properties/app.manifest
+Novel Writer.csproj.bak
+Novel Writer_1_TemporaryKey.pfx
+Novel Writer_TemporaryKey.pfx
+.vs/
+*.pfx

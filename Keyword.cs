@@ -13,22 +13,15 @@ namespace novel
 {
     public partial class Keyword : DevExpress.XtraEditors.XtraForm
     {
-        novel f1;
+        novel novel;
 
         private int pos = -1;
         private int prv = -1;
         private string text;
         private string search;
-        /*
-        public KeyControl(novel f)
+        internal Keyword(novel novel, Functions functions)
         {
-            f1 = f;
-            InitializeComponent();
-        }
-        */
-        public Keyword(novel f)
-        {
-            f1 = f;
+            this.novel = novel;
             InitializeComponent();
         }
 
@@ -38,30 +31,30 @@ namespace novel
             {
                 if (pos != -1)
                 {
-                    text = f1.customRichText1.Text;
+                    text = novel.customRichText1.Text;
                     search = textBox1.Text;
 
                     pos = text.IndexOf(search, pos + 1);
-                    f1.customRichText1.SelectionStart = pos;
+                    novel.customRichText1.SelectionStart = pos;
                     //テキストボックスにフォーカスを移動
-                    f1.customRichText1.Focus();
-                    //f1.customRichText1.ScrollToCaret();
-                    f1.customRichText1.SelectionStart = pos;
-                    f1.customRichText1.SelectionLength = search.Length;
+                    novel.customRichText1.Focus();
+                    //novel.customRichText1.ScrollToCaret();
+                    novel.customRichText1.SelectionStart = pos;
+                    novel.customRichText1.SelectionLength = search.Length;
                     this.Focus();
                 }
                 else
                 {
-                    text = f1.customRichText1.Text;
+                    text = novel.customRichText1.Text;
                     search = textBox1.Text;
 
                     pos = text.IndexOf(search);
-                    f1.customRichText1.SelectionStart = pos;
+                    novel.customRichText1.SelectionStart = pos;
                     //テキストボックスにフォーカスを移動
-                    f1.customRichText1.Focus();
-                    //f1.customRichText1.ScrollToCaret();
-                    f1.customRichText1.SelectionStart = pos;
-                    f1.customRichText1.SelectionLength = search.Length;
+                    novel.customRichText1.Focus();
+                    //novel.customRichText1.ScrollToCaret();
+                    novel.customRichText1.SelectionStart = pos;
+                    novel.customRichText1.SelectionLength = search.Length;
                     this.Focus();
                 }
             }
@@ -73,14 +66,6 @@ namespace novel
         private void simpleButton14_Click(object sender, EventArgs e)
         {
             next();
-            //string str = f1.customRichText1.Text;
-            //f1.F2.Text = textBox1.Text;
-
-
-
-            //対象文字列.Remove(消去を開始したい位置,消去したい文字数)
-            //string next = str.Remove(pos, Text.Length);
-            //textBox_Output.Text += string.Format("{0:d} 文字目で該当しました。\r\n", pos);
         }
 
         private void preview()
@@ -89,30 +74,30 @@ namespace novel
             {
                 if (prv != -1)
                 {
-                    text = f1.customRichText1.Text;
+                    text = novel.customRichText1.Text;
                     search = textBox1.Text;
 
                     prv = text.LastIndexOf(search, prv - 1);
-                    f1.customRichText1.SelectionStart = prv;
+                    novel.customRichText1.SelectionStart = prv;
                     //テキストボックスにフォーカスを移動
-                    f1.customRichText1.Focus();
-                    f1.customRichText1.SelectionStart = prv;
-                    f1.customRichText1.SelectionLength = search.Length;
-                    //f1.customRichText1.ScrollToCaret();
+                    novel.customRichText1.Focus();
+                    novel.customRichText1.SelectionStart = prv;
+                    novel.customRichText1.SelectionLength = search.Length;
+                    //novel.customRichText1.ScrollToCaret();
                     this.Focus();
                 }
                 else
                 {
-                    text = f1.customRichText1.Text;
+                    text = novel.customRichText1.Text;
                     search = textBox1.Text;
 
                     prv = text.LastIndexOf(search);
-                    f1.customRichText1.SelectionStart = prv;
+                    novel.customRichText1.SelectionStart = prv;
                     //テキストボックスにフォーカスを移動
-                    f1.customRichText1.Focus();
-                    f1.customRichText1.SelectionStart = prv;
-                    f1.customRichText1.SelectionLength = search.Length;
-                    //f1.customRichText1.ScrollToCaret();
+                    novel.customRichText1.Focus();
+                    novel.customRichText1.SelectionStart = prv;
+                    novel.customRichText1.SelectionLength = search.Length;
+                    //novel.customRichText1.ScrollToCaret();
                     this.Focus();
                 }
             }
@@ -151,37 +136,37 @@ namespace novel
             {
                 if (pos != -1)
                 {
-                    text = f1.customRichText1.Text;
+                    text = novel.customRichText1.Text;
                     search = textBox1.Text;
 
                     pos = text.IndexOf(search, pos + 1);
-                    f1.customRichText1.SelectionStart = pos;
+                    novel.customRichText1.SelectionStart = pos;
                     //テキストボックスにフォーカスを移動
-                    System.Text.StringBuilder sb = new System.Text.StringBuilder(f1.customRichText1.Text);
+                    System.Text.StringBuilder sb = new System.Text.StringBuilder(novel.customRichText1.Text);
                     sb.Replace(search, textBox2.Text, pos, search.Length);
-                    f1.customRichText1.Text = sb.ToString();
-                    f1.customRichText1.Focus();
-                    //f1.customRichText1.ScrollToCaret();
-                    f1.customRichText1.SelectionStart = pos;
-                    f1.customRichText1.SelectionLength = search.Length;
-                    
+                    novel.customRichText1.Text = sb.ToString();
+                    novel.customRichText1.Focus();
+                    //novel.customRichText1.ScrollToCaret();
+                    novel.customRichText1.SelectionStart = pos;
+                    novel.customRichText1.SelectionLength = search.Length;
+
                     this.Focus();
                 }
                 else
                 {
-                    text = f1.customRichText1.Text;
+                    text = novel.customRichText1.Text;
                     search = textBox1.Text;
 
                     pos = text.IndexOf(search);
-                    f1.customRichText1.SelectionStart = pos;
+                    novel.customRichText1.SelectionStart = pos;
                     //テキストボックスにフォーカスを移動
-                    System.Text.StringBuilder sb = new System.Text.StringBuilder(f1.customRichText1.Text);
+                    System.Text.StringBuilder sb = new System.Text.StringBuilder(novel.customRichText1.Text);
                     sb.Replace(search, textBox2.Text, pos, search.Length);
-                    f1.customRichText1.Text = sb.ToString();
-                    f1.customRichText1.Focus();
-                    //f1.customRichText1.ScrollToCaret();
-                    f1.customRichText1.SelectionStart = pos;
-                    f1.customRichText1.SelectionLength = search.Length;
+                    novel.customRichText1.Text = sb.ToString();
+                    novel.customRichText1.Focus();
+                    //novel.customRichText1.ScrollToCaret();
+                    novel.customRichText1.SelectionStart = pos;
+                    novel.customRichText1.SelectionLength = search.Length;
                     this.Focus();
                 }
             }
@@ -199,37 +184,37 @@ namespace novel
                 {
                     if (pos != -1)
                     {
-                        text = f1.customRichText1.Text;
+                        text = novel.customRichText1.Text;
                         search = textBox1.Text;
 
                         pos = text.IndexOf(search, pos + 1);
-                        f1.customRichText1.SelectionStart = pos;
+                        novel.customRichText1.SelectionStart = pos;
                         //テキストボックスにフォーカスを移動
-                        System.Text.StringBuilder sb = new System.Text.StringBuilder(f1.customRichText1.Text);
+                        System.Text.StringBuilder sb = new System.Text.StringBuilder(novel.customRichText1.Text);
                         sb.Replace(search, textBox2.Text, pos, search.Length);
-                        f1.customRichText1.Text = sb.ToString();
-                        f1.customRichText1.Focus();
-                        //f1.customRichText1.ScrollToCaret();
-                        f1.customRichText1.SelectionStart = pos;
-                        f1.customRichText1.SelectionLength = search.Length;
+                        novel.customRichText1.Text = sb.ToString();
+                        novel.customRichText1.Focus();
+                        //novel.customRichText1.ScrollToCaret();
+                        novel.customRichText1.SelectionStart = pos;
+                        novel.customRichText1.SelectionLength = search.Length;
 
                         this.Focus();
                     }
                     else
                     {
-                        text = f1.customRichText1.Text;
+                        text = novel.customRichText1.Text;
                         search = textBox1.Text;
 
                         pos = text.IndexOf(search);
-                        f1.customRichText1.SelectionStart = pos;
+                        novel.customRichText1.SelectionStart = pos;
                         //テキストボックスにフォーカスを移動
-                        System.Text.StringBuilder sb = new System.Text.StringBuilder(f1.customRichText1.Text);
+                        System.Text.StringBuilder sb = new System.Text.StringBuilder(novel.customRichText1.Text);
                         sb.Replace(search, textBox2.Text, pos, search.Length);
-                        f1.customRichText1.Text = sb.ToString();
-                        f1.customRichText1.Focus();
-                        //f1.customRichText1.ScrollToCaret();
-                        f1.customRichText1.SelectionStart = pos;
-                        f1.customRichText1.SelectionLength = search.Length;
+                        novel.customRichText1.Text = sb.ToString();
+                        novel.customRichText1.Focus();
+                        //novel.customRichText1.ScrollToCaret();
+                        novel.customRichText1.SelectionStart = pos;
+                        novel.customRichText1.SelectionLength = search.Length;
                         this.Focus();
                     }
                 }

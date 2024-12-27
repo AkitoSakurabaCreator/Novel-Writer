@@ -13,11 +13,12 @@ namespace novel
 {
     public partial class settings : Form
     {
-        novel f;
-        public settings(novel f)
+        novel novel;
+        Functions functions;
+        internal settings(novel novel, Functions funcitons)
         {
             InitializeComponent();
-            this.f = f;
+            this.novel = novel;
         }
 
         string[] files;
@@ -27,15 +28,14 @@ namespace novel
             $@"{System.AppDomain.CurrentDomain.BaseDirectory}Settings\Image", "*", System.IO.SearchOption.AllDirectories);
 
             this.TopMost = !this.TopMost;
-            for(int i = 0; i < files.Length; i++)
+            for (int i = 0; i < files.Length; i++)
             {
                 listBox1.Items.Add(files[i]);
             }
-            f.BackgroundImageLayout = ImageLayout.Center;
-            //f.pictureBox1.Layout = ImageLayout.Center;
+            novel.BackgroundImageLayout = ImageLayout.Center;
         }
 
-        
+
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -43,12 +43,11 @@ namespace novel
             {
                 if (File.Exists(files[listBox1.SelectedIndex]))
                 {
-                    f.BackgroundImage = System.Drawing.Image.FromFile(files[listBox1.SelectedIndex]);
-                    //f.pictureBox1.Image = System.Drawing.Image.FromFile(files[listBox1.SelectedIndex]);
+                    novel.BackgroundImage = System.Drawing.Image.FromFile(files[listBox1.SelectedIndex]);
                 }
-            }  
-            
-            
+            }
+
+
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -57,13 +56,12 @@ namespace novel
             {
                 if (File.Exists(files[listBox1.SelectedIndex]))
                 {
-                    f.BackgroundImage = System.Drawing.Image.FromFile(files[listBox1.SelectedIndex]);
-                    //f.pictureBox1.Image = System.Drawing.Image.FromFile(files[listBox1.SelectedIndex]);
+                    novel.BackgroundImage = System.Drawing.Image.FromFile(files[listBox1.SelectedIndex]);
                 }
             }
             else
             {
-                f.BackgroundImage = null;
+                novel.BackgroundImage = null;
             }
         }
 
@@ -72,7 +70,8 @@ namespace novel
             try
             {
                 pictureBox1.Image = Image.FromFile(files[listBox1.SelectedIndex]);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
 
             }
@@ -93,26 +92,26 @@ namespace novel
         {
             if (checkBox1.Checked)
             {
-                f.tabSwitch = true;
+                functions.tabSwitch = true;
             }
             else
             {
-                f.tabSwitch = false;
+                functions.tabSwitch = false;
             }
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            f.customRichText1.BackColor = Color.FromArgb(colorPickEdit1.Color.R, colorPickEdit1.Color.G, colorPickEdit1.Color.B);
-            f.customRichText2.BackColor = Color.FromArgb(colorPickEdit1.Color.R, colorPickEdit1.Color.G, colorPickEdit1.Color.B);
-            f.customRichText3.BackColor = Color.FromArgb(colorPickEdit1.Color.R, colorPickEdit1.Color.G, colorPickEdit1.Color.B);
+            novel.customRichText1.BackColor = Color.FromArgb(colorPickEdit1.Color.R, colorPickEdit1.Color.G, colorPickEdit1.Color.B);
+            novel.customRichText2.BackColor = Color.FromArgb(colorPickEdit1.Color.R, colorPickEdit1.Color.G, colorPickEdit1.Color.B);
+            novel.customRichText3.BackColor = Color.FromArgb(colorPickEdit1.Color.R, colorPickEdit1.Color.G, colorPickEdit1.Color.B);
 
-            f.BackColor = Color.FromArgb(colorPickEdit1.Color.R, colorPickEdit1.Color.G, colorPickEdit1.Color.B);
-            f.ForeColor = Color.FromArgb(colorPickEdit2.Color.R, colorPickEdit2.Color.G, colorPickEdit2.Color.B);
+            novel.BackColor = Color.FromArgb(colorPickEdit1.Color.R, colorPickEdit1.Color.G, colorPickEdit1.Color.B);
+            novel.ForeColor = Color.FromArgb(colorPickEdit2.Color.R, colorPickEdit2.Color.G, colorPickEdit2.Color.B);
 
-            f.customRichText1.ForeColor = Color.FromArgb(colorPickEdit2.Color.R, colorPickEdit2.Color.G, colorPickEdit2.Color.B);
-            f.customRichText2.ForeColor = Color.FromArgb(colorPickEdit2.Color.R, colorPickEdit2.Color.G, colorPickEdit2.Color.B);
-            f.customRichText3.ForeColor = Color.FromArgb(colorPickEdit2.Color.R, colorPickEdit2.Color.G, colorPickEdit2.Color.B);
+            novel.customRichText1.ForeColor = Color.FromArgb(colorPickEdit2.Color.R, colorPickEdit2.Color.G, colorPickEdit2.Color.B);
+            novel.customRichText2.ForeColor = Color.FromArgb(colorPickEdit2.Color.R, colorPickEdit2.Color.G, colorPickEdit2.Color.B);
+            novel.customRichText3.ForeColor = Color.FromArgb(colorPickEdit2.Color.R, colorPickEdit2.Color.G, colorPickEdit2.Color.B);
         }
     }
 }
