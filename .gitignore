@@ -5,3 +5,5 @@ Properties/app.manifest
 Novel Writer.csproj.bak
 Novel Writer_1_TemporaryKey.pfx
 Novel Writer_TemporaryKey.pfx
+.vs/
+*.pfx

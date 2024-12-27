@@ -56,7 +56,6 @@ namespace novel
             this.simpleButton21 = new DevExpress.XtraEditors.SimpleButton();
             this.label11 = new System.Windows.Forms.Label();
             this.simpleButton20 = new DevExpress.XtraEditors.SimpleButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.simpleButton19 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton18 = new DevExpress.XtraEditors.SimpleButton();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
@@ -77,15 +76,15 @@ namespace novel
             this.panel4 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.customRichText1 = new CustomRichText();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.コピーCtrlCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.貼り付けCtrlVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.切り取りCtrlXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customRichText3 = new CustomRichText();
             this.panel5 = new System.Windows.Forms.Panel();
             this.customRichText2 = new CustomRichText();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.コピーCtrlCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.貼り付けCtrlVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.切り取りCtrlXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarControl1)).BeginInit();
@@ -96,8 +95,8 @@ namespace novel
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // simpleButton1
@@ -131,7 +130,6 @@ namespace novel
             this.panel1.Controls.Add(this.simpleButton21);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.simpleButton20);
-            this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.simpleButton19);
             this.panel1.Controls.Add(this.simpleButton18);
             this.panel1.Controls.Add(this.comboBox4);
@@ -160,10 +158,10 @@ namespace novel
             // 
             this.simpleButton24.Appearance.Font = new System.Drawing.Font("メイリオ", 9F);
             this.simpleButton24.Appearance.Options.UseFont = true;
-            this.simpleButton24.Location = new System.Drawing.Point(774, 2);
+            this.simpleButton24.Location = new System.Drawing.Point(846, 2);
             this.simpleButton24.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton24.Name = "simpleButton24";
-            this.simpleButton24.Size = new System.Drawing.Size(60, 29);
+            this.simpleButton24.Size = new System.Drawing.Size(92, 29);
             this.simpleButton24.TabIndex = 48;
             this.simpleButton24.Text = "設定";
             this.simpleButton24.Click += new System.EventHandler(this.simpleButton24_Click);
@@ -172,7 +170,7 @@ namespace novel
             // 
             this.simpleButton23.Appearance.Font = new System.Drawing.Font("メイリオ", 9F);
             this.simpleButton23.Appearance.Options.UseFont = true;
-            this.simpleButton23.Location = new System.Drawing.Point(351, 69);
+            this.simpleButton23.Location = new System.Drawing.Point(467, 2);
             this.simpleButton23.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton23.Name = "simpleButton23";
             this.simpleButton23.Size = new System.Drawing.Size(110, 29);
@@ -316,26 +314,11 @@ namespace novel
             this.simpleButton20.Text = "PDFに出力";
             this.simpleButton20.Click += new System.EventHandler(this.simpleButton20_Click);
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(840, 5);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(109, 28);
-            this.checkBox1.TabIndex = 36;
-            this.checkBox1.Text = "自動セーブ";
-            this.checkBox1.UseVisualStyleBackColor = false;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // simpleButton19
             // 
             this.simpleButton19.Appearance.Font = new System.Drawing.Font("メイリオ", 9F);
             this.simpleButton19.Appearance.Options.UseFont = true;
-            this.simpleButton19.Location = new System.Drawing.Point(699, 2);
+            this.simpleButton19.Location = new System.Drawing.Point(771, 2);
             this.simpleButton19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton19.Name = "simpleButton19";
             this.simpleButton19.Size = new System.Drawing.Size(69, 29);
@@ -347,10 +330,10 @@ namespace novel
             // 
             this.simpleButton18.Appearance.Font = new System.Drawing.Font("メイリオ", 9F);
             this.simpleButton18.Appearance.Options.UseFont = true;
-            this.simpleButton18.Location = new System.Drawing.Point(583, 2);
+            this.simpleButton18.Location = new System.Drawing.Point(699, 2);
             this.simpleButton18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton18.Name = "simpleButton18";
-            this.simpleButton18.Size = new System.Drawing.Size(110, 29);
+            this.simpleButton18.Size = new System.Drawing.Size(66, 29);
             this.simpleButton18.TabIndex = 31;
             this.simpleButton18.Text = "キー設定";
             this.simpleButton18.Click += new System.EventHandler(this.simpleButton18_Click);
@@ -428,7 +411,7 @@ namespace novel
             // 
             this.simpleButton16.Appearance.Font = new System.Drawing.Font("メイリオ", 9F);
             this.simpleButton16.Appearance.Options.UseFont = true;
-            this.simpleButton16.Location = new System.Drawing.Point(467, 2);
+            this.simpleButton16.Location = new System.Drawing.Point(583, 2);
             this.simpleButton16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton16.Name = "simpleButton16";
             this.simpleButton16.Size = new System.Drawing.Size(110, 29);
@@ -611,6 +594,37 @@ namespace novel
             this.customRichText1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.customRichText1_KeyUp_1);
             this.customRichText1.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.customRichText1_PreviewKeyDown);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.コピーCtrlCToolStripMenuItem,
+            this.貼り付けCtrlVToolStripMenuItem,
+            this.切り取りCtrlXToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(163, 70);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // コピーCtrlCToolStripMenuItem
+            // 
+            this.コピーCtrlCToolStripMenuItem.Name = "コピーCtrlCToolStripMenuItem";
+            this.コピーCtrlCToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.コピーCtrlCToolStripMenuItem.Text = "コピー(Ctrl + C)";
+            this.コピーCtrlCToolStripMenuItem.Click += new System.EventHandler(this.コピーCtrlCToolStripMenuItem_Click);
+            // 
+            // 貼り付けCtrlVToolStripMenuItem
+            // 
+            this.貼り付けCtrlVToolStripMenuItem.Name = "貼り付けCtrlVToolStripMenuItem";
+            this.貼り付けCtrlVToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.貼り付けCtrlVToolStripMenuItem.Text = "貼り付け(Ctrl + V)";
+            this.貼り付けCtrlVToolStripMenuItem.Click += new System.EventHandler(this.貼り付けCtrlVToolStripMenuItem_Click);
+            // 
+            // 切り取りCtrlXToolStripMenuItem
+            // 
+            this.切り取りCtrlXToolStripMenuItem.Name = "切り取りCtrlXToolStripMenuItem";
+            this.切り取りCtrlXToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.切り取りCtrlXToolStripMenuItem.Text = "切り取り(Ctrl + X)";
+            this.切り取りCtrlXToolStripMenuItem.Click += new System.EventHandler(this.切り取りCtrlXToolStripMenuItem_Click);
+            // 
             // customRichText3
             // 
             this.customRichText3.AcceptsTab = true;
@@ -669,37 +683,6 @@ namespace novel
             this.saveFileDialog1.Filter = "(*.pdf*)|*.pdf*";
             this.saveFileDialog1.Title = "PDF";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.コピーCtrlCToolStripMenuItem,
-            this.貼り付けCtrlVToolStripMenuItem,
-            this.切り取りCtrlXToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            // 
-            // コピーCtrlCToolStripMenuItem
-            // 
-            this.コピーCtrlCToolStripMenuItem.Name = "コピーCtrlCToolStripMenuItem";
-            this.コピーCtrlCToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.コピーCtrlCToolStripMenuItem.Text = "コピー(Ctrl + C)";
-            this.コピーCtrlCToolStripMenuItem.Click += new System.EventHandler(this.コピーCtrlCToolStripMenuItem_Click);
-            // 
-            // 貼り付けCtrlVToolStripMenuItem
-            // 
-            this.貼り付けCtrlVToolStripMenuItem.Name = "貼り付けCtrlVToolStripMenuItem";
-            this.貼り付けCtrlVToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.貼り付けCtrlVToolStripMenuItem.Text = "貼り付け(Ctrl + V)";
-            this.貼り付けCtrlVToolStripMenuItem.Click += new System.EventHandler(this.貼り付けCtrlVToolStripMenuItem_Click);
-            // 
-            // 切り取りCtrlXToolStripMenuItem
-            // 
-            this.切り取りCtrlXToolStripMenuItem.Name = "切り取りCtrlXToolStripMenuItem";
-            this.切り取りCtrlXToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.切り取りCtrlXToolStripMenuItem.Text = "切り取り(Ctrl + X)";
-            this.切り取りCtrlXToolStripMenuItem.Click += new System.EventHandler(this.切り取りCtrlXToolStripMenuItem_Click);
-            // 
             // notifyIcon1
             // 
             this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
@@ -726,6 +709,7 @@ namespace novel
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.novel_writer_FormClosed);
             this.Load += new System.EventHandler(this.novel_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.novel_KeyDown);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.novel_PreviewKeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarControl1.Properties)).EndInit();
@@ -736,8 +720,8 @@ namespace novel
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -752,43 +736,42 @@ namespace novel
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton simpleButton8;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label9;
-        private DevExpress.XtraEditors.SimpleButton simpleButton14;
-        private System.Windows.Forms.Panel panel5;
         private DevExpress.XtraEditors.SimpleButton simpleButton15;
-        private DevExpress.XtraEditors.SimpleButton simpleButton16;
         private DevExpress.XtraEditors.SimpleButton simpleButton17;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
         private DevExpress.XtraEditors.SimpleButton simpleButton18;
         private DevExpress.XtraEditors.SimpleButton simpleButton19;
-        private System.Windows.Forms.CheckBox checkBox1;
         private DevExpress.XtraEditors.SimpleButton simpleButton20;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private DevExpress.XtraEditors.SimpleButton simpleButton21;
         private DevExpress.XtraEditors.TrackBarControl trackBarControl1;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem コピーCtrlCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 貼り付けCtrlVToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 切り取りCtrlXToolStripMenuItem;
-        private System.Windows.Forms.CheckBox checkBox3;
         private DevExpress.XtraEditors.SimpleButton simpleButton22;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton23;
         private DevExpress.XtraEditors.SimpleButton simpleButton24;
-        private SplitContainer splitContainer1;
-        private NotifyIcon notifyIcon1;
-        public CustomRichText customRichText1;
         public CustomRichText customRichText2;
         public CustomRichText customRichText3;
         public Panel panel1;
+        internal NotifyIcon notifyIcon1;
+        internal DevExpress.XtraEditors.SimpleButton simpleButton16;
+        internal CheckBox checkBox3;
+        internal DevExpress.XtraEditors.SimpleButton simpleButton14;
+        internal Panel panel5;
+        internal DevExpress.XtraEditors.SimpleButton simpleButton23;
+        internal SplitContainer splitContainer1;
+        internal Label label1;
+        internal ComboBox comboBox5;
+        internal ComboBox comboBox4;
+        internal CheckBox checkBox2;
+        internal ComboBox comboBox2;
+        internal CustomRichText customRichText1;
+        internal Timer timer1;
+        internal Label label11;
+        internal ComboBox comboBox3;
+        internal SaveFileDialog saveFileDialog1;
     }
 }
 
