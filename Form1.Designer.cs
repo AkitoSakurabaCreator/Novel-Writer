@@ -77,15 +77,15 @@ namespace novel
             this.panel4 = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.customRichText1 = new CustomRichText();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.コピーCtrlCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.貼り付けCtrlVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.切り取りCtrlXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customRichText3 = new CustomRichText();
             this.panel5 = new System.Windows.Forms.Panel();
             this.customRichText2 = new CustomRichText();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.コピーCtrlCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.貼り付けCtrlVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.切り取りCtrlXToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarControl1)).BeginInit();
@@ -96,8 +96,8 @@ namespace novel
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // simpleButton1
@@ -282,7 +282,6 @@ namespace novel
             this.trackBarControl1.TabIndex = 2;
             this.trackBarControl1.Value = 10;
             this.trackBarControl1.EditValueChanged += new System.EventHandler(this.trackBarControl1_EditValueChanged);
-            this.trackBarControl1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.trackBarControl1_KeyDown);
             // 
             // simpleButton21
             // 
@@ -612,37 +611,6 @@ namespace novel
             this.customRichText1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.customRichText1_KeyUp_1);
             this.customRichText1.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.customRichText1_PreviewKeyDown);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.コピーCtrlCToolStripMenuItem,
-            this.貼り付けCtrlVToolStripMenuItem,
-            this.切り取りCtrlXToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(163, 70);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            // 
-            // コピーCtrlCToolStripMenuItem
-            // 
-            this.コピーCtrlCToolStripMenuItem.Name = "コピーCtrlCToolStripMenuItem";
-            this.コピーCtrlCToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.コピーCtrlCToolStripMenuItem.Text = "コピー(Ctrl + C)";
-            this.コピーCtrlCToolStripMenuItem.Click += new System.EventHandler(this.コピーCtrlCToolStripMenuItem_Click);
-            // 
-            // 貼り付けCtrlVToolStripMenuItem
-            // 
-            this.貼り付けCtrlVToolStripMenuItem.Name = "貼り付けCtrlVToolStripMenuItem";
-            this.貼り付けCtrlVToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.貼り付けCtrlVToolStripMenuItem.Text = "貼り付け(Ctrl + V)";
-            this.貼り付けCtrlVToolStripMenuItem.Click += new System.EventHandler(this.貼り付けCtrlVToolStripMenuItem_Click);
-            // 
-            // 切り取りCtrlXToolStripMenuItem
-            // 
-            this.切り取りCtrlXToolStripMenuItem.Name = "切り取りCtrlXToolStripMenuItem";
-            this.切り取りCtrlXToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.切り取りCtrlXToolStripMenuItem.Text = "切り取り(Ctrl + X)";
-            this.切り取りCtrlXToolStripMenuItem.Click += new System.EventHandler(this.切り取りCtrlXToolStripMenuItem_Click);
-            // 
             // customRichText3
             // 
             this.customRichText3.AcceptsTab = true;
@@ -701,6 +669,37 @@ namespace novel
             this.saveFileDialog1.Filter = "(*.pdf*)|*.pdf*";
             this.saveFileDialog1.Title = "PDF";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.コピーCtrlCToolStripMenuItem,
+            this.貼り付けCtrlVToolStripMenuItem,
+            this.切り取りCtrlXToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // コピーCtrlCToolStripMenuItem
+            // 
+            this.コピーCtrlCToolStripMenuItem.Name = "コピーCtrlCToolStripMenuItem";
+            this.コピーCtrlCToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.コピーCtrlCToolStripMenuItem.Text = "コピー(Ctrl + C)";
+            this.コピーCtrlCToolStripMenuItem.Click += new System.EventHandler(this.コピーCtrlCToolStripMenuItem_Click);
+            // 
+            // 貼り付けCtrlVToolStripMenuItem
+            // 
+            this.貼り付けCtrlVToolStripMenuItem.Name = "貼り付けCtrlVToolStripMenuItem";
+            this.貼り付けCtrlVToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.貼り付けCtrlVToolStripMenuItem.Text = "貼り付け(Ctrl + V)";
+            this.貼り付けCtrlVToolStripMenuItem.Click += new System.EventHandler(this.貼り付けCtrlVToolStripMenuItem_Click);
+            // 
+            // 切り取りCtrlXToolStripMenuItem
+            // 
+            this.切り取りCtrlXToolStripMenuItem.Name = "切り取りCtrlXToolStripMenuItem";
+            this.切り取りCtrlXToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.切り取りCtrlXToolStripMenuItem.Text = "切り取り(Ctrl + X)";
+            this.切り取りCtrlXToolStripMenuItem.Click += new System.EventHandler(this.切り取りCtrlXToolStripMenuItem_Click);
+            // 
             // notifyIcon1
             // 
             this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
@@ -737,8 +736,8 @@ namespace novel
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

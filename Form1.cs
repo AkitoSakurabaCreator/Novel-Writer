@@ -1895,7 +1895,7 @@ this.listBox1.Items.Add(str);
                 //ドキュメントを閉じる
                 doc.Close();
 
-                XtraMessageBox.Show("ファイルを保存しました。" + Environment.NewLine + saveFileDialog1.FileName + ".pdf", "お知らせ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show("ファイルを保存しました。", "お知らせ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -2735,7 +2735,52 @@ this.listBox1.Items.Add(str);
                 KeyWordOpen();
             }
 
-          
+            if (e.KeyData == (Keys.Control | Keys.S))
+            {
+                if (url != "")
+                {
+                    //ファイルに書き込む
+                    StreamWriter sw = new StreamWriter(url, false,
+                        System.Text.Encoding.GetEncoding("UTF-8"));
+                    sw.Write(customRichText1.Text);
+                    //閉じる
+                    sw.Close();
+                    this.Text = "ノベルライター " + filename;
+                }
+                else
+                {
+                    XtraMessageBox.Show("ファイルを開く、名前を付けて保存\r\nでファイルが選択されていないため、保存ができません。", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+
+            if (e.KeyData == (Keys.Control | Keys.Shift | Keys.S))
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    //OKボタンがクリックされたとき、
+                    //選択された名前で新しいファイルを作成し、
+                    //読み書きアクセス許可でそのファイルを開く。
+                    //既存のファイルが選択されたときはデータが消える恐れあり。
+                    stream = sfd.OpenFile();
+                    string a = ".nvw";
+                    if (stream != null)
+                    {
+                        url = sfd.FileName;
+                        //MessageBox.Show(url);
+                        stream.Close();
+                        //StreamWriter sw = new StreamWriter(url, false,  Encoding.GetEncoding("shift_jis"));
+                        StreamWriter sw = new StreamWriter(url, false, Encoding.GetEncoding("UTF-8"));
+                        sw.Write(customRichText1.Text);
+                        sw.Close();
+
+                        filename = Path.GetFileName(sfd.FileName);
+                        this.Text = "ノベルライター " + filename;
+                        XtraMessageBox.Show("保存されました。\r\n" + url, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+            }
 
             if (e.KeyData == Keys.F12)
             {
@@ -2871,99 +2916,12 @@ this.listBox1.Items.Add(str);
 
         private void customRichText1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == (Keys.Control | Keys.S))
-            {
-                if (url != "")
-                {
-                    //ファイルに書き込む
-                    StreamWriter sw = new StreamWriter(url, false,
-                        System.Text.Encoding.GetEncoding("UTF-8"));
-                    sw.Write(customRichText1.Text);
-                    //閉じる
-                    sw.Close();
-                    this.Text = "ノベルライター " + filename;
-                }
-                else
-                {
-                    XtraMessageBox.Show("ファイルを開く、名前を付けて保存\r\nでファイルが選択されていないため、保存ができません。", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-            }
-
-            if (e.KeyData == (Keys.Control | Keys.Shift | Keys.S))
-            {
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    //OKボタンがクリックされたとき、
-                    //選択された名前で新しいファイルを作成し、
-                    //読み書きアクセス許可でそのファイルを開く。
-                    //既存のファイルが選択されたときはデータが消える恐れあり。
-                    stream = sfd.OpenFile();
-                    if (stream != null)
-                    {
-                        url = sfd.FileName;
-                        //MessageBox.Show(url);
-                        stream.Close();
-                        //StreamWriter sw = new StreamWriter(url, false,  Encoding.GetEncoding("shift_jis"));
-                        StreamWriter sw = new StreamWriter(url, false, Encoding.GetEncoding("UTF-8"));
-                        sw.Write(customRichText1.Text);
-                        sw.Close();
-
-                        filename = Path.GetFileName(sfd.FileName);
-                        this.Text = "ノベルライター " + filename;
-                        XtraMessageBox.Show("保存されました。\r\n" + url, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
-                }
-            }
+            
         }
 
         private void customRichText2_KeyDown(object sender, KeyEventArgs e)
         {
-
-            if (e.KeyData == (Keys.Control | Keys.S))
-            {
-                if (url != "")
-                {
-                    //ファイルに書き込む
-                    StreamWriter sw = new StreamWriter(url, false,
-                        System.Text.Encoding.GetEncoding("UTF-8"));
-                    sw.Write(customRichText1.Text);
-                    //閉じる
-                    sw.Close();
-                    this.Text = "ノベルライター " + filename;
-                }
-                else
-                {
-                    XtraMessageBox.Show("ファイルを開く、名前を付けて保存\r\nでファイルが選択されていないため、保存ができません。", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-
-            if (e.KeyData == (Keys.Control | Keys.Shift | Keys.S))
-            {
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    //OKボタンがクリックされたとき、
-                    //選択された名前で新しいファイルを作成し、
-                    //読み書きアクセス許可でそのファイルを開く。
-                    //既存のファイルが選択されたときはデータが消える恐れあり。
-                    stream = sfd.OpenFile();
-                    if (stream != null)
-                    {
-                        url = sfd.FileName;
-                        //MessageBox.Show(url);
-                        stream.Close();
-                        //StreamWriter sw = new StreamWriter(url, false,  Encoding.GetEncoding("shift_jis"));
-                        StreamWriter sw = new StreamWriter(url, false, Encoding.GetEncoding("UTF-8"));
-                        sw.Write(customRichText1.Text);
-                        sw.Close();
-
-                        filename = Path.GetFileName(sfd.FileName);
-                        this.Text = "ノベルライター " + filename;
-                        XtraMessageBox.Show("保存されました。\r\n" + url, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-            }
+            
         }
 
         private void customRichText2_LinkClicked(object sender, LinkClickedEventArgs e)
@@ -2980,59 +2938,13 @@ this.listBox1.Items.Add(str);
         {
             if (!autoenter)
             {
-                customRichText1.Text = customRichText3.Text;
+                customRichText3.Text = customRichText1.Text;
             }
         }
 
         private void customRichText3_KeyDown(object sender, KeyEventArgs e)
         {
-
-            if (e.KeyData == (Keys.Control | Keys.S))
-            {
-                if (url != "")
-                {
-                    //ファイルに書き込む
-                    StreamWriter sw = new StreamWriter(url, false,
-                        System.Text.Encoding.GetEncoding("UTF-8"));
-                    sw.Write(customRichText3.Text);
-                    //閉じる
-                    sw.Close();
-                    this.Text = "ノベルライター " + filename;
-                }
-                else
-                {
-                    XtraMessageBox.Show("ファイルを開く、名前を付けて保存\r\nでファイルが選択されていないため、保存ができません。", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-            }
-
-            if (e.KeyData == (Keys.Control | Keys.Shift | Keys.S))
-            {
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    //OKボタンがクリックされたとき、
-                    //選択された名前で新しいファイルを作成し、
-                    //読み書きアクセス許可でそのファイルを開く。
-                    //既存のファイルが選択されたときはデータが消える恐れあり。
-                    stream = sfd.OpenFile();
-                    string a = ".nvw";
-                    if (stream != null)
-                    {
-                        url = sfd.FileName;
-                        //MessageBox.Show(url);
-                        stream.Close();
-                        //StreamWriter sw = new StreamWriter(url, false,  Encoding.GetEncoding("shift_jis"));
-                        StreamWriter sw = new StreamWriter(url, false, Encoding.GetEncoding("UTF-8"));
-                        sw.Write(customRichText3.Text);
-                        sw.Close();
-
-                        filename = Path.GetFileName(sfd.FileName);
-                        this.Text = "ノベルライター " + filename;
-                        XtraMessageBox.Show("保存されました。\r\n" + url, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
-                }
-            }
+            
         }
 
         private void customRichText3_LinkClicked_1(object sender, LinkClickedEventArgs e)
@@ -3107,6 +3019,51 @@ this.listBox1.Items.Add(str);
                 }
             }
 
+            if (e.KeyData == (Keys.Control | Keys.S))
+            {
+                if (url != "")
+                {
+                    //ファイルに書き込む
+                    StreamWriter sw = new StreamWriter(url, false,
+                        System.Text.Encoding.GetEncoding("UTF-8"));
+                    sw.Write(customRichText1.Text);
+                    //閉じる
+                    sw.Close();
+                    this.Text = "ノベルライター " + filename;
+                }
+                else
+                {
+                    XtraMessageBox.Show("ファイルを開く、名前を付けて保存\r\nでファイルが選択されていないため、保存ができません。", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
+            if (e.KeyData == (Keys.Control | Keys.Shift | Keys.S))
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    //OKボタンがクリックされたとき、
+                    //選択された名前で新しいファイルを作成し、
+                    //読み書きアクセス許可でそのファイルを開く。
+                    //既存のファイルが選択されたときはデータが消える恐れあり。
+                    stream = sfd.OpenFile();
+                    string a = ".nvw";
+                    if (stream != null)
+                    {
+                        url = sfd.FileName;
+                        //MessageBox.Show(url);
+                        stream.Close();
+                        //StreamWriter sw = new StreamWriter(url, false,  Encoding.GetEncoding("shift_jis"));
+                        StreamWriter sw = new StreamWriter(url, false, Encoding.GetEncoding("UTF-8"));
+                        sw.Write(customRichText1.Text);
+                        sw.Close();
+
+                        filename = Path.GetFileName(sfd.FileName);
+                        this.Text = "ノベルライター " + filename;
+                        XtraMessageBox.Show("保存されました。\r\n" + url, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+            }
 
 
             if (e.KeyData == Keys.F12)
@@ -3182,9 +3139,9 @@ this.listBox1.Items.Add(str);
 
         private void customRichText3_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
-            if (autoenter)
+            if (!autoenter)
             {
-                autoenter = false;
+                autoenter = true;
             }
 
             if (e.KeyData == (Keys.Control | Keys.Shift | Keys.T))
@@ -3260,6 +3217,52 @@ this.listBox1.Items.Add(str);
                 KeyWordOpen();
             }
 
+            if (e.KeyData == (Keys.Control | Keys.S))
+            {
+                if (url != "")
+                {
+                    //ファイルに書き込む
+                    StreamWriter sw = new StreamWriter(url, false,
+                        System.Text.Encoding.GetEncoding("UTF-8"));
+                    sw.Write(customRichText3.Text);
+                    //閉じる
+                    sw.Close();
+                    this.Text = "ノベルライター " + filename;
+                }
+                else
+                {
+                    XtraMessageBox.Show("ファイルを開く、名前を付けて保存\r\nでファイルが選択されていないため、保存ができません。", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+
+            if (e.KeyData == (Keys.Control | Keys.Shift | Keys.S))
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    //OKボタンがクリックされたとき、
+                    //選択された名前で新しいファイルを作成し、
+                    //読み書きアクセス許可でそのファイルを開く。
+                    //既存のファイルが選択されたときはデータが消える恐れあり。
+                    stream = sfd.OpenFile();
+                    string a = ".nvw";
+                    if (stream != null)
+                    {
+                        url = sfd.FileName;
+                        //MessageBox.Show(url);
+                        stream.Close();
+                        //StreamWriter sw = new StreamWriter(url, false,  Encoding.GetEncoding("shift_jis"));
+                        StreamWriter sw = new StreamWriter(url, false, Encoding.GetEncoding("UTF-8"));
+                        sw.Write(customRichText3.Text);
+                        sw.Close();
+
+                        filename = Path.GetFileName(sfd.FileName);
+                        this.Text = "ノベルライター " + filename;
+                        XtraMessageBox.Show("保存されました。\r\n" + url, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+            }
 
             if (e.KeyData == Keys.F12)
             {
@@ -3338,55 +3341,6 @@ this.listBox1.Items.Add(str);
                     dockpanel = true;
                     splitContainer1.Panel2Collapsed = false;
                     simpleButton23.Text = "戻す";
-                }
-            }
-        }
-
-        private void trackBarControl1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == (Keys.Control | Keys.S))
-            {
-                if (url != "")
-                {
-                    //ファイルに書き込む
-                    StreamWriter sw = new StreamWriter(url, false,
-                        System.Text.Encoding.GetEncoding("UTF-8"));
-                    sw.Write(customRichText1.Text);
-                    //閉じる
-                    sw.Close();
-                    this.Text = "ノベルライター " + filename;
-                }
-                else
-                {
-                    XtraMessageBox.Show("ファイルを開く、名前を付けて保存\r\nでファイルが選択されていないため、保存ができません。", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-            }
-
-            if (e.KeyData == (Keys.Control | Keys.Shift | Keys.S))
-            {
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    //OKボタンがクリックされたとき、
-                    //選択された名前で新しいファイルを作成し、
-                    //読み書きアクセス許可でそのファイルを開く。
-                    //既存のファイルが選択されたときはデータが消える恐れあり。
-                    stream = sfd.OpenFile();
-                    if (stream != null)
-                    {
-                        url = sfd.FileName;
-                        //MessageBox.Show(url);
-                        stream.Close();
-                        //StreamWriter sw = new StreamWriter(url, false,  Encoding.GetEncoding("shift_jis"));
-                        StreamWriter sw = new StreamWriter(url, false, Encoding.GetEncoding("UTF-8"));
-                        sw.Write(customRichText1.Text);
-                        sw.Close();
-
-                        filename = Path.GetFileName(sfd.FileName);
-                        this.Text = "ノベルライター " + filename;
-                        XtraMessageBox.Show("保存されました。\r\n" + url, "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
                 }
             }
         }
