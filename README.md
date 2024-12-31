@@ -11,7 +11,6 @@ tags: ""
 <p style="display: inline">
   <!-- バックエンドのフレームワーク一覧 -->
   <img src="https://img.shields.io/badge/C++-00599C?style=flat-square&logo=C%2B%2B&logoColor=white">
- 
 </p>
 
 
@@ -31,8 +30,9 @@ tags: ""
  小説等のシナリオや文章制作ソフトウェアです。集中力の妨げにならないようなエディターが欲しくて極限まで機能を削って作りました。
 
 ## デモ(図解)
-![Novel_Writer_IqLT6sBHOW.png](https://boostnote.io/api/teams/ZiDFKbzPj/files/694299f41608073d2226cdc8ef37a298eb0d5a8bbf06071b2840e6562408078a-Novel_Writer_IqLT6sBHOW.png)
-
+<p align="center">
+  <img src="docs/Novel-Writer.png" alt="Novel-Writer: full app" width=810 />
+</p>
 
 ## 環境
 
